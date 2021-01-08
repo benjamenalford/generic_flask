@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def default():
-    return ("Available Routes:<br/>")
+    return ("Hello")
 
 
 @app.route("/api")
