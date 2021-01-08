@@ -5,10 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def default():
-    """List all available api routes."""
-    return (
-        f"Available Routes:<br/>"
-    )
+    return ("Available Routes:<br/>")
 
 
 @app.route("/api")
