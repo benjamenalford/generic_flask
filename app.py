@@ -11,5 +11,10 @@ def default():
     )
 
 
+@app.route("/api")
+def api():
+    return jsonify("test")
+
+
 if __name__ == '__main__':
     app.run(debug=True)
