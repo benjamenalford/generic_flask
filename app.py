@@ -11,7 +11,7 @@ def default():
 
 @app.route("/api")
 def api():
-    return jsonify("test")
+    return jsonify(os.environ.get('TEST', 'Name not configured'))
 
 
 port = int(os.environ.get('PORT', 5000))
