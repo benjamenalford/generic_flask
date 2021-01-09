@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def default():
-    return (os.environ.get('NAME', 'none'))
+    return (os.environ.get('NAME', 'Name not configured'))
 
 
 @app.route("/api")
