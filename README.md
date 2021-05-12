@@ -7,4 +7,5 @@
     - Bootstrap v5
     - style overrides in style.css
     - example api usage in app.js
+* required assetts for delploying to Heroku are included as well.
 ##### Open License - I don't care what you do with this
