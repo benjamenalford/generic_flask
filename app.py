@@ -1,7 +1,18 @@
+from bson import json_util
 from flask import Flask, jsonify
+import pymongo
 import os
+import json
 
 app = Flask(__name__)
+
+# setup mongo connection
+conn = "mongodb://localhost:27017"
+client = pymongo.MongoClient(conn)
+
+# connect to mongo db (hoobastank) and collection (class)
+db = client.hoobastank
+class_collection = db.class_db
 
 
 @app.route("/")
@@ -11,7 +22,9 @@ def default():
 
 @app.route("/api")
 def api():
-    return jsonify(os.environ.get('TEST', 'Name not configured'))
+    data = class_collection.find()
+
+    return json_util.dumps(data)
 
 
 port = int(os.environ.get('PORT', 5000))
