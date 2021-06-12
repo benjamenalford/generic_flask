@@ -1,11 +1,18 @@
+import socket
 from bson import json_util
 from flask import Flask, jsonify, render_template
 import pymongo
 import os
 import json
 
+# test
+
 app = Flask(__name__)
 
+h_name = socket.gethostname()
+IP_addres = socket.gethostbyname(h_name)
+print("Host Name is:" + h_name)
+print("Computer IP Address is:" + IP_addres)
 # setup mongo connection
 serverUrl = os.environ.get('MONGO', "mongodb://localhost:27017")
 client = pymongo.MongoClient(serverUrl)
