@@ -6,9 +6,8 @@ import json
 
 app = Flask(__name__)
 
-# setup mongo connection
-conn = "mongodb://localhost:27017"
-client = pymongo.MongoClient(conn)
+serverUrl = os.environ.get('MONGO', "mongodb://localhost:27017")
+client = pymongo.MongoClient(serverUrl)
 
 # connect to mongo db (hoobastank) and collection (class)
 db = client.hoobastank
