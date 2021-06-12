@@ -1,12 +1,11 @@
 from bson import json_util
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify
 import pymongo
 import os
 import json
 
 app = Flask(__name__)
 
-# setup mongo connection
 serverUrl = os.environ.get('MONGO', "mongodb://localhost:27017")
 client = pymongo.MongoClient(serverUrl)
 
@@ -17,7 +16,7 @@ class_collection = db.class_db
 
 @app.route("/")
 def default():
-    return render_template('index.html')
+    return (os.environ.get('NAME', 'Name not configured'))
 
 
 @app.route("/api")
