@@ -5,8 +5,6 @@ import pymongo
 import os
 import json
 
-# test
-
 app = Flask(__name__)
 
 h_name = socket.gethostname()
