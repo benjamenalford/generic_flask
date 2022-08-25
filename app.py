@@ -1,6 +1,6 @@
 import socket
 from bson import json_util
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 import pymongo
 import os
 import json
@@ -23,11 +23,19 @@ client = pymongo.MongoClient(serverUrl)
 db = client.hoobastank
 class_collection = db.class_db
 
-
 @app.route("/")
 def default():
     return render_template('index.html')
 
+
+@app.route("/home")
+def home():
+    return render_template('home.html')
+
+
+@app.route("/post")
+def post():
+    return render_template('post.html')
 
 @app.route("/api")
 def api():
@@ -35,6 +43,11 @@ def api():
 
     return json_util.dumps(data)
 
+@app.route('/get_data', methods=['POST'])
+def get_data():
+    if request.method == 'POST':
+        data = request.form['data']
+        return data
 
 port = int(os.environ.get('PORT', 5000))
 
