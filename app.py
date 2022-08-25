@@ -47,6 +47,7 @@ def api():
 def get_data():
     if request.method == 'POST':
         data = request.form['data']
+        # do something with the data
         return data
 
 port = int(os.environ.get('PORT', 5000))

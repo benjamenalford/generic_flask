@@ -17,13 +17,15 @@
         <input id="data" type="text" class="form-control" placeholder="Data" aria-label="Data" aria-describedby="url">
         <button class="btn btn-outline-secondary" type="button" id="submit">Get Data</button>
     </div>
+    <div id="response">
 
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script type="text/javascript" src="static/js/app.js"></script>
     <script>
         let data = d3.select("#data");
         let submit = d3.select("#submit");
-
+        let response = d3.select("#response");
         submit.on("click", () => {
 
             d3.text("/get_data", {
@@ -33,6 +35,7 @@
                 },
                 body: "data=" + JSON.stringify(data.node().value)
             }).then(data => {
+                response.text(data);
                 console.log(data);
             });
         });
