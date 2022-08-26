@@ -15,6 +15,7 @@
 
     <div class="input-group mb-3">
         <input id="data" type="text" class="form-control" placeholder="Data" aria-label="Data" aria-describedby="url">
+        <input id="data2" type="text" class="form-control" placeholder="More Data" aria-label="Data more" aria-describedby="a">
         <button class="btn btn-outline-secondary" type="button" id="submit">Get Data</button>
     </div>
     <div id="response">
@@ -24,6 +25,7 @@
     <script type="text/javascript" src="static/js/app.js"></script>
     <script>
         let data = d3.select("#data");
+        let moreData = d3.select("#data2");
         let submit = d3.select("#submit");
         let response = d3.select("#response");
         submit.on("click", () => {

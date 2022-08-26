@@ -18,8 +18,8 @@ serverUrl = os.environ.get('MONGO', "mongodb://localhost:27017")
 client = pymongo.MongoClient(serverUrl)
 
 # connect to mongo db (hoobastank) and collection (class)
-db = client.hoobastank
-class_collection = db.class_db
+#db = client.hoobastank
+#class_collection = db.class_db
 
 @app.route("/")
 def default():
@@ -37,9 +37,9 @@ def post():
 
 @app.route("/api")
 def api():
-    data = class_collection.find()
-
-    return json_util.dumps(data)
+    #data = class_collection.find()
+    return {}
+    #return json_util.dumps(data)
 
 @app.route('/get_data', methods=['POST'])
 def get_data():
