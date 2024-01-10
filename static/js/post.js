@@ -1,11 +1,12 @@
 
 console.log("post.js loaded")
-
-let data = d3.select("#data");
-let moreData = d3.select("#data2");
 let submit = d3.select("#submit");
-let response = d3.select("#response");
+
 submit.on("click", () => {
+    let data = d3.select("#data");
+    let moreData = d3.select("#data2");
+    let response = d3.select("#response");
+
     payload = {}
     //get the value of the input fields
     payload.whatever = data.node().value
@@ -15,7 +16,7 @@ submit.on("click", () => {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: "data=" + JSON.stringify(payload)
+        body: "data=" + JSON.stringify(payload) // add it to the http header as a json string
     }).then(data => {
         //display the data in div 'response'
         response.text(data);

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from flask import Flask, render_template, request,session,json,jsonify
+from flask import Flask, render_template, request,json,jsonify
 
 app = Flask(__name__)
 
@@ -9,7 +9,9 @@ def default():
 
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    dict_list = [{'id':1,'source':'python'}]
+    heading_text = "this text came from a varaible python"
+    return render_template('home.html', data=dict_list, heading=heading_text)
 
 @app.route("/post")
 def post():
@@ -17,7 +19,8 @@ def post():
 
 @app.route("/api")
 def api():
-    return jsonify([{'id':1,'source':'python'}])
+    dict_list = [{'id':1,'source':'python'}]
+    return jsonify(dict_list)
 
 @app.route('/get_data', methods=['POST'])
 def get_data():

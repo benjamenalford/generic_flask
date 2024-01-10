@@ -1,17 +1,20 @@
 from flask import Flask, jsonify, render_template, redirect
 from sqlalchemy import create_engine
-import os
 
 app = Flask(__name__)
 
 # your port is probably 5432 not 5433 like mine is here
 connection_string = "postgres:postgres@localhost:5433/customer_db"
 
-
 @app.route("/")
 def default():
     return render_template('index.html')
 
+@app.route("/home")
+def home():
+    dict_list = [{'id':1,'source':'python'}]
+    heading_text = "this text came from a varaible python"
+    return render_template('home.html', data=dict_list, heading=heading_text)
 
 @app.route("/api")
 def api():
@@ -27,8 +30,5 @@ def api():
         index += 1
     return jsonify(data)
 
-
-port = int(os.environ.get('PORT', 5000))
-
 if __name__ == '__main__':
-    app.run(debug=True, port=port)
+    app.run(debug=True, port=5010)
