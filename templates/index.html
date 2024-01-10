@@ -2,7 +2,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Flask Quick Postgres and D3 Template</title>
+        <title>Flask, D3 Examples</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
@@ -14,24 +14,31 @@
     </head>
 
     <body class="container">
-        <h1>Flask Quick Postgres and D3 Template</h1>
-        <p>
-            The console shows the data loaded via D3.
-        </p>
-        <p>Added a post example in /post.html </p>
-        <p>
-            Items Included:
-        <ul>
-            <li>Bootstrap 5.0</li>
-            <li>D3 5.0</li>
-        </ul>
-
-        </p>
-        <p> Style overrides are in static/css/style.css</p>
-        <p> JS is in static/js/app.js</p>
-        <p> JS for post is in static/js/post.js</p>
-        <p>Application is being served via Flask using <code>python app.py</code></p>
-
+        <h1>Flask, API, Mongo DB, HTML Template, and D3 Template Application</h1>
+        <div>
+            <p>
+                The console shows the data loaded via D3.
+            </p>
+        </div>
+        <div>
+            <p>Not all routes may be avialable, depending on which py example started it.
+            <ul>
+                <li><a href="/">Root - this page or sample data</a></li>
+                <li><a href="/api">Api</a></li>
+                <li><a href="/home">Home - Flask generated HTML example</a></li>
+                <li><a href="/post">Post - Post data from the browser to the flask server</a></li>
+            </ul>
+            </p>
+        </div>
+        <div>
+            <p>overrides and such</p>
+            <ul>
+                <li> Style overrides are in static/css/style.css</li>
+                <li> JS is in static/js/app.js</li>
+                <li> JS for post is in static/js/post.js</li>
+            </ul>
+            <p>Application is being served via Flask using <code>python app.py</code></p>
+        </div>
         <div class="chart">
         </div>
         <script type="text/javascript" src="static/js/app.js"></script>

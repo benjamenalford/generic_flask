@@ -8,13 +8,14 @@ app = Flask(__name__)
 serverUrl = "mongodb://localhost:27017"
 client = pymongo.MongoClient(serverUrl)
 
-# connect to mongo db (hoobastank) and collection (class)
+# connect to mongo db (hoobastank) and collection (class_db)
 db = client.hoobastank
 class_collection = db.class_db
 
 @app.route("/")
 def default():
-    return ("text from flask")
+    dict_list = [{'id':1,'source':'python'}]
+    return jsonify(dict_list)
 
 @app.route("/api")
 def api():

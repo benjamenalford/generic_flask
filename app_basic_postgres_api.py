@@ -3,12 +3,12 @@ from sqlalchemy import create_engine
 
 app = Flask(__name__)
 
-# your port is probably 5432 not 5433 like mine is here
-connection_string = "postgres:postgres@localhost:5433/customer_db"
+connection_string = "postgres:postgres@localhost:5432/customer_db"
 
 @app.route("/")
 def default():
-    return ("text from flask")
+    dict_list = [{'id':1,'source':'python'}]
+    return jsonify(dict_list)
 
 @app.route("/api")
 def api():

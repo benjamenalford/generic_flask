@@ -10,6 +10,12 @@ connection_string = "postgres:postgres@localhost:5433/customer_db"
 def default():
     return render_template('index.html')
 
+@app.route("/home")
+def home():
+    dict_list = [{'id':1,'source':'python'}]
+    heading_text = "this text came from a varaible python"
+    return render_template('home.html', data=dict_list, heading=heading_text)
+
 @app.route("/api")
 def api():
     engine = create_engine(f'postgresql://{connection_string}')
