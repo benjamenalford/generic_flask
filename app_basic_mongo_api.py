@@ -1,7 +1,6 @@
 from bson import json_util
 from flask import Flask, jsonify
 import pymongo
-import os
 import json
 
 app = Flask(__name__)
@@ -15,12 +14,11 @@ class_collection = db.class_db
 
 @app.route("/")
 def default():
-    return (os.environ.get('NAME', 'Name not configured'))
+    return ("text from flask")
 
 @app.route("/api")
 def api():
     data = class_collection.find()
-
     return json_util.dumps(data)
 
 if __name__ == '__main__':

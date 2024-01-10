@@ -16,7 +16,7 @@ submit.on("click", () => {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: "data=" + JSON.stringify(payload)
+        body: "data=" + JSON.stringify(payload) // add it to the http header as a json string
     }).then(data => {
         //display the data in div 'response'
         response.text(data);

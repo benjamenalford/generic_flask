@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from flask import Flask, render_template, request,session,json,jsonify
+from flask import Flask, render_template, request,json,jsonify
 
 app = Flask(__name__)
 

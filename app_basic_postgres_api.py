@@ -1,18 +1,14 @@
 from flask import Flask, jsonify
 from sqlalchemy import create_engine
-import os
 
 app = Flask(__name__)
 
 # your port is probably 5432 not 5433 like mine is here
 connection_string = "postgres:postgres@localhost:5433/customer_db"
 
-
 @app.route("/")
 def default():
-    #prints the environment variable NAME, if it exists
-    return (os.environ.get('NAME', 'Name not configured'))
-
+    return ("text from flask")
 
 @app.route("/api")
 def api():
@@ -28,8 +24,5 @@ def api():
         index += 1
     return jsonify(data)
 
-
-port = int(os.environ.get('PORT', 5000))
-
 if __name__ == '__main__':
-    app.run(debug=True, port=port)
+    app.run(debug=True, port=5010)
