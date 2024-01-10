@@ -10,6 +10,7 @@ connection_string = "postgres:postgres@localhost:5433/customer_db"
 
 @app.route("/")
 def default():
+    #prints the environment variable NAME, if it exists
     return (os.environ.get('NAME', 'Name not configured'))
 
 
