@@ -12,7 +12,7 @@
             integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
             crossorigin="anonymous"></script>
         <script type="text/javascript" src="static/js/app.js"></script>
-        <script type="text/javascript" src="static/js/post.js"></script>
+
     </head>
 
     <body class="container">
@@ -28,7 +28,8 @@
         <div id="response">
 
         </div>
-
+        <!-- post.js needs to load last so that it can use the values from the fields above -->
+        <script type="text/javascript" src="static/js/post.js"></script>
     </body>
 
 </html>
