@@ -15,7 +15,6 @@ X = filtered_df[['stat_hp', 'stat_attack','stat_defense', 'stat_special-attack',
 model= KMeans(n_clusters=5)
 model.fit(X)
 
-
 @app.route("/")
 def default():
     return render_template('index.html')
@@ -52,12 +51,14 @@ def knn_route():
 def predict():
     if request.method == 'POST':
         data = request.form['data']
-        # do something with the data
+        #convert the data to json
+        data = json.loads(data)
         print(data)
-        #sample data [45,49,49,65,65,45]
-        prediction = model.predict([data])
+        #predict
+        prediction =model.predict([data['data']])
         print(prediction[0])
-        return f'{prediction[0]}'
+        #return the prediction as an object
+        return {'prediction': f'{prediction[0]}'}
 
 if __name__ == '__main__':
     app.run(debug=True, port=5010)

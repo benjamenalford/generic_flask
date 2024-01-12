@@ -22,7 +22,7 @@ submit.on("click", () => {
         body: "data=" + JSON.stringify(payload) // add it to the http header as a json string
     }).then(data => {
         //display the data in div 'response'
-        response.text(data);
+        response.text(`${data} ${response.text()}`)
         //log the data
         console.log('this is what the response from flask was')
         console.log(data);
