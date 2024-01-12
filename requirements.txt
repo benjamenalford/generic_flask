@@ -5,3 +5,8 @@ sqlalchemy
 bson
 pymongo
 dnspython
+pandas
+sklearn
+time
+requests
+
