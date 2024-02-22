@@ -6,7 +6,6 @@ bson
 pymongo
 dnspython
 pandas
-sklearn
-time
+scikit-learn
 requests
 
